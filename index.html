@@ -1,0 +1,1124 @@
+<html>
+  <head>
+    <title>Clojure Library Overview</title>
+    <link href="static/favicon.png" rel="icon" />
+    <link href="static/favicon.png" rel="shortcut icon" />
+    <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/wiki.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/internal.css" rel="stylesheet" />
+    <style>.menuWrapper{height: 36px;}</style>
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="http://www.wikispaces.com/_/2009051601/s/internal_ie.css" type="text/css" />
+    <![endif]-->
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a id="Logo" href="index.html"><img alt="Clojure" height="100" width="100" src="static/clojure-icon.gif" /></a>
+	<h1><a title="page header title" id="page-header" href="index.html">Clojure Library Overview</a></h1>
+      </div>
+      <div id="leftcolumn"><html><body><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <span class="toc-header">Summary Documentation</span><br />
+    <ul>
+      <li><a class="wiki_link" href="index.html">Overview</a></li>
+      <li><a class="wiki_link" href="api-index.html">API Index</a></li>
+    </ul>
+    <div class="ProjectTOC">
+      <span class="toc-header">Project Documentation</span>
+      <ul id="left-sidebar-list">
+        <li><a href="http://clojure.github.com/algo.generic/" class="wiki_link">algo.generic</a></li><li><a href="http://clojure.github.com/algo.monads/" class="wiki_link">algo.monads</a></li><li><a href="http://clojure.github.com/clojure/" class="wiki_link">clojure</a></li><li><a href="http://clojure.github.com/core.unify/" class="wiki_link">core.unify</a></li><li><a href="http://clojure.github.com/data.codec/" class="wiki_link">data.codec</a></li><li><a href="http://clojure.github.com/data.csv/" class="wiki_link">data.csv</a></li><li><a href="http://clojure.github.com/data.json/" class="wiki_link">data.json</a></li><li><a href="http://clojure.github.com/data.priority-map/" class="wiki_link">data.priority-map</a></li><li><a href="http://clojure.github.com/data.zip/" class="wiki_link">data.zip</a></li><li><a href="http://clojure.github.com/java.classpath/" class="wiki_link">java.classpath</a></li><li><a href="http://clojure.github.com/java.data/" class="wiki_link">java.data</a></li><li><a href="http://clojure.github.com/java.jdbc/" class="wiki_link">java.jdbc</a></li><li><a href="http://clojure.github.com/java.jmx/" class="wiki_link">java.jmx</a></li><li><a href="http://clojure.github.com/math.combinatorics/" class="wiki_link">math.combinatorics</a></li><li><a href="http://clojure.github.com/math.numeric-tower/" class="wiki_link">math.numeric-tower</a></li><li><a href="http://clojure.github.com/tools.cli/" class="wiki_link">tools.cli</a></li><li><a href="http://clojure.github.com/tools.logging/" class="wiki_link">tools.logging</a></li><li><a href="http://clojure.github.com/tools.macro/" class="wiki_link">tools.macro</a></li><li><a href="http://clojure.github.com/tools.namespace/" class="wiki_link">tools.namespace</a></li><li><a href="http://clojure.github.com/tools.nrepl/" class="wiki_link">tools.nrepl</a></li><li><a href="http://clojure.github.com/tools.trace/" class="wiki_link">tools.trace</a></li>
+      </ul>
+    </div>
+    <a href="http://clojure.org" class="wiki_link">Clojure Home</a>
+  </div>
+</div>
+</body></html></div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div id="content_view" class="wiki wikiPage">
+                <div id="right-sidebar"></div>
+                <div id="content-tag"><html><body><h1 id="toc0">Clojure Core and Contrib API Overview</h1>
+<br />
+<div id="Overview">
+This page documents the various projects in the Clojure organization including the 
+core Clojure libraries and the various contributed libraries.
+<p>
+Each project entry has a link to the project's own API documentation page that has complete
+documentation for that API.
+</p><p>
+The <a href="api-index.html" id="index-link">API index</a> has a complete, alphabetized 
+index of all the functions in the various projects.
+</p><p>
+These projects are made available under the 
+<a href="http://opensource.org/licenses/eclipse-1.0.php">Eclipse Public License (EPL)</a>.  
+They are copyright 2008-2011 by Rich Hickey and the various contributors. 
+</p><p>
+<strong>Note:</strong> Not all the projects in Clojure are currently documented on these 
+pages. Please see <a href="https://github.com/clojure" id="org-link">https://github.com/clojure</a>
+for the full repository of projects under the Clojure umbrella.
+</p></div>
+<br />
+<div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">algo.generic</h2>
+  <br />
+  <a href="http://clojure.github.com/algo.generic/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/algo.generic/clojure.algo.generic.arithmetic-api.html">clojure.algo.generic.arithmetic</a></h4>
+    <span class="author-line">by <span class="author-name">Konrad Hinsen</span><br /></span>
+    <pre class="namespace-docstr">Generic arithmetic interface
+This library defines generic versions of + - * / as multimethods
+that can be defined for any type. The minimal required 
+implementations for a type are binary + and * plus unary - and /.
+Everything else is derived from these automatically. Explicit
+binary definitions for - and / can be provided for
+efficiency reasons.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/algo.generic/clojure.algo.generic.collection-api.html">clojure.algo.generic.collection</a></h4>
+    <span class="author-line">by <span class="author-name">Konrad Hinsen</span><br /></span>
+    <pre class="namespace-docstr">Generic collection interface
+This library defines generic versions of common
+collection-related functions as multimethods that can be
+defined for any type.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/algo.generic/clojure.algo.generic.comparison-api.html">clojure.algo.generic.comparison</a></h4>
+    <span class="author-line">by <span class="author-name">Konrad Hinsen</span><br /></span>
+    <pre class="namespace-docstr">Generic comparison interface
+This library defines generic versions of = not= &lt; &gt; &lt;= &gt;= zero?
+as multimethods that can be defined for any type. Of the
+greater/less-than relations, types must minimally implement &gt;.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/algo.generic/clojure.algo.generic.functor-api.html">clojure.algo.generic.functor</a></h4>
+    <span class="author-line">by <span class="author-name">Konrad Hinsen</span><br /></span>
+    <pre class="namespace-docstr">Generic functor interface (fmap)</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/algo.generic/clojure.algo.generic.math-functions-api.html">clojure.algo.generic.math-functions</a></h4>
+    <span class="author-line">by <span class="author-name">Konrad Hinsen</span><br /></span>
+    <pre class="namespace-docstr">Generic math function interface
+This library defines generic versions of common mathematical
+functions such as sqrt or sin as multimethods that can be
+defined for any type.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">algo.monads</h2>
+  <br />
+  <a href="http://clojure.github.com/algo.monads/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/algo.monads/index.html">clojure.algo.monads</a></h4>
+    <span class="author-line">by <span class="author-name">Konrad Hinsen</span><br /></span>
+    <pre class="namespace-docstr">This library contains the most commonly used monads as well
+as macros for defining and using monads and useful monadic
+functions.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">clojure</h2>
+  <br />
+  <a href="http://clojure.github.com/clojure/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.core-api.html">clojure.core</a></h4>
+    
+    <pre class="namespace-docstr">Fundamental library of the Clojure language</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.data-api.html">clojure.data</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Halloway</span><br /></span>
+    <pre class="namespace-docstr">Non-core data functions.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.inspector-api.html">clojure.inspector</a></h4>
+    <span class="author-line">by <span class="author-name">Rich Hickey</span><br /></span>
+    <pre class="namespace-docstr">Graphical object inspector for Clojure data structures.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.java.browse-api.html">clojure.java.browse</a></h4>
+    <span class="author-line">by <span class="author-name">Christophe Grand</span><br /></span>
+    <pre class="namespace-docstr">Start a web browser from Clojure</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.java.io-api.html">clojure.java.io</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.java.javadoc-api.html">clojure.java.javadoc</a></h4>
+    <span class="author-line">by <span class="author-name">Christophe Grand, Stuart Sierra</span><br /></span>
+    <pre class="namespace-docstr">A repl helper to quickly open javadocs.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.java.shell-api.html">clojure.java.shell</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.main-api.html">clojure.main</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.pprint-api.html">clojure.pprint</a></h4>
+    <span class="author-line">by <span class="author-name">Tom Faulhaber</span><br /></span>
+    <pre class="namespace-docstr">A Pretty Printer for Clojure
+
+clojure.pprint implements a flexible system for printing structured data
+in a pleasing, easy-to-understand format. Basic use of the pretty printer is 
+simple, just call pprint instead of println. More advanced users can use 
+the building blocks provided to create custom output formats. 
+
+Out of the box, pprint supports a simple structured format for basic data 
+and a specialized format for Clojure source code. More advanced formats, 
+including formats that don't look like Clojure data at all like XML and 
+JSON, can be rendered by creating custom dispatch functions. 
+
+In addition to the pprint function, this module contains cl-format, a text 
+formatting function which is fully compatible with the format function in 
+Common Lisp. Because pretty printing directives are directly integrated with
+cl-format, it supports very concise custom dispatch. It also provides
+a more powerful alternative to Clojure's standard format function.
+
+See documentation for pprint and cl-format for more information or 
+complete documentation on the the clojure web site on github.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.reflect-api.html">clojure.reflect</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Halloway</span><br /></span>
+    <pre class="namespace-docstr">Reflection on Host Types
+Alpha - subject to change.
+
+Two main entry points: 
+
+* type-reflect reflects on something that implements TypeReference.
+* reflect (for REPL use) reflects on the class of an instance, or
+  on a class if passed a class
+
+Key features:
+
+* Exposes the read side of reflection as pure data. Reflecting
+  on a type returns a map with keys :bases, :flags, and :members.
+
+* Canonicalizes class names as Clojure symbols. Types can extend
+  to the TypeReference protocol to indicate that they can be
+  unambiguously resolved as a type name. The canonical format
+  requires one non-Java-ish convention: array brackets are &lt;&gt;
+  instead of [] so they can be part of a Clojure symbol.
+
+* Pluggable Reflectors for different implementations. The default
+  JavaReflector is good when you have a class in hand, or use
+  the AsmReflector for "hands off" reflection without forcing
+  classes to load.
+
+Platform implementers must:
+
+* Create an implementation of Reflector.
+* Create one or more implementations of TypeReference.
+* def default-reflector to be an instance that satisfies Reflector.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.repl-api.html">clojure.repl</a></h4>
+    <span class="author-line">by <span class="author-name">Chris Houser, Christophe Grand, Stephen Gilardi, Michel Salim</span><br /></span>
+    <pre class="namespace-docstr">Utilities meant to be used interactively at the REPL</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.set-api.html">clojure.set</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.stacktrace-api.html">clojure.stacktrace</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Sierra</span><br /></span>
+    <pre class="namespace-docstr">Print stack traces oriented towards Clojure, not Java.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.string-api.html">clojure.string</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.template-api.html">clojure.template</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Sierra</span><br /></span>
+    <pre class="namespace-docstr">Macros that expand to repeated copies of a template expression.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.test-api.html">clojure.test</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Sierra, with contributions and suggestions by 
+  Chas Emerick, Allen Rohner, and Stuart Halloway</span><br /></span>
+    <pre class="namespace-docstr">A unit testing framework.
+
+ASSERTIONS
+
+The core of the library is the "is" macro, which lets you make
+assertions of any arbitrary expression:
+
+(is (= 4 (+ 2 2)))
+(is (instance? Integer 256))
+(is (.startsWith "abcde" "ab"))
+
+You can type an "is" expression directly at the REPL, which will
+print a message if it fails.
+
+    user&gt; (is (= 5 (+ 2 2)))
+
+    FAIL in  (:1)
+    expected: (= 5 (+ 2 2))
+      actual: (not (= 5 4))
+    false
+
+The "expected:" line shows you the original expression, and the
+"actual:" shows you what actually happened.  In this case, it
+shows that (+ 2 2) returned 4, which is not = to 5.  Finally, the
+"false" on the last line is the value returned from the
+expression.  The "is" macro always returns the result of the
+inner expression.
+
+There are two special assertions for testing exceptions.  The
+"(is (thrown? c ...))" form tests if an exception of class c is
+thrown:
+
+(is (thrown? ArithmeticException (/ 1 0))) 
+
+"(is (thrown-with-msg? c re ...))" does the same thing and also
+tests that the message on the exception matches the regular
+expression re:
+
+(is (thrown-with-msg? ArithmeticException #"Divide by zero"
+                      (/ 1 0)))
+
+DOCUMENTING TESTS
+
+"is" takes an optional second argument, a string describing the
+assertion.  This message will be included in the error report.
+
+(is (= 5 (+ 2 2)) "Crazy arithmetic")
+
+In addition, you can document groups of assertions with the
+"testing" macro, which takes a string followed by any number of
+assertions.  The string will be included in failure reports.
+Calls to "testing" may be nested, and all of the strings will be
+joined together with spaces in the final report, in a style
+similar to RSpec &lt;http://rspec.info/&gt;
+
+(testing "Arithmetic"
+  (testing "with positive integers"
+    (is (= 4 (+ 2 2)))
+    (is (= 7 (+ 3 4))))
+  (testing "with negative integers"
+    (is (= -4 (+ -2 -2)))
+    (is (= -1 (+ 3 -4)))))
+
+Note that, unlike RSpec, the "testing" macro may only be used
+INSIDE a "deftest" or "with-test" form (see below).
+
+
+DEFINING TESTS
+
+There are two ways to define tests.  The "with-test" macro takes
+a defn or def form as its first argument, followed by any number
+of assertions.  The tests will be stored as metadata on the
+definition.
+
+(with-test
+    (defn my-function [x y]
+      (+ x y))
+  (is (= 4 (my-function 2 2)))
+  (is (= 7 (my-function 3 4))))
+
+As of Clojure SVN rev. 1221, this does not work with defmacro.
+See http://code.google.com/p/clojure/issues/detail?id=51
+
+The other way lets you define tests separately from the rest of
+your code, even in a different namespace:
+
+(deftest addition
+  (is (= 4 (+ 2 2)))
+  (is (= 7 (+ 3 4))))
+
+(deftest subtraction
+  (is (= 1 (- 4 3)))
+  (is (= 3 (- 7 4))))
+
+This creates functions named "addition" and "subtraction", which
+can be called like any other function.  Therefore, tests can be
+grouped and composed, in a style similar to the test framework in
+Peter Seibel's "Practical Common Lisp"
+&lt;http://www.gigamonkeys.com/book/practical-building-a-unit-test-framework.html&gt;
+
+(deftest arithmetic
+  (addition)
+  (subtraction))
+
+The names of the nested tests will be joined in a list, like
+"(arithmetic addition)", in failure reports.  You can use nested
+tests to set up a context shared by several tests.
+
+
+RUNNING TESTS
+
+Run tests with the function "(run-tests namespaces...)":
+
+(run-tests 'your.namespace 'some.other.namespace)
+
+If you don't specify any namespaces, the current namespace is
+used.  To run all tests in all namespaces, use "(run-all-tests)".
+
+By default, these functions will search for all tests defined in
+a namespace and run them in an undefined order.  However, if you
+are composing tests, as in the "arithmetic" example above, you
+probably do not want the "addition" and "subtraction" tests run
+separately.  In that case, you must define a special function
+named "test-ns-hook" that runs your tests in the correct order:
+
+(defn test-ns-hook []
+  (arithmetic))
+
+Note: test-ns-hook prevents execution of fixtures (see below).
+
+
+OMITTING TESTS FROM PRODUCTION CODE
+
+You can bind the variable "*load-tests*" to false when loading or
+compiling code in production.  This will prevent any tests from
+being created by "with-test" or "deftest".
+
+
+FIXTURES
+
+Fixtures allow you to run code before and after tests, to set up
+the context in which tests should be run.
+
+A fixture is just a function that calls another function passed as
+an argument.  It looks like this:
+
+(defn my-fixture [f]
+   Perform setup, establish bindings, whatever.
+  (f)  Then call the function we were passed.
+   Tear-down / clean-up code here.
+ )
+
+Fixtures are attached to namespaces in one of two ways.  "each"
+fixtures are run repeatedly, once for each test function created
+with "deftest" or "with-test".  "each" fixtures are useful for
+establishing a consistent before/after state for each test, like
+clearing out database tables.
+
+"each" fixtures can be attached to the current namespace like this:
+(use-fixtures :each fixture1 fixture2 ...)
+The fixture1, fixture2 are just functions like the example above.
+They can also be anonymous functions, like this:
+(use-fixtures :each (fn [f] setup... (f) cleanup...))
+
+The other kind of fixture, a "once" fixture, is only run once,
+around ALL the tests in the namespace.  "once" fixtures are useful
+for tasks that only need to be performed once, like establishing
+database connections, or for time-consuming tasks.
+
+Attach "once" fixtures to the current namespace like this:
+(use-fixtures :once fixture1 fixture2 ...)
+
+Note: Fixtures and test-ns-hook are mutually incompatible.  If you
+are using test-ns-hook, fixture functions will *never* be run.
+
+
+SAVING TEST OUTPUT TO A FILE
+
+All the test reporting functions write to the var *test-out*.  By
+default, this is the same as *out*, but you can rebind it to any
+PrintWriter.  For example, it could be a file opened with
+clojure.java.io/writer.
+
+
+EXTENDING TEST-IS (ADVANCED)
+
+You can extend the behavior of the "is" macro by defining new
+methods for the "assert-expr" multimethod.  These methods are
+called during expansion of the "is" macro, so they should return
+quoted forms to be evaluated.
+
+You can plug in your own test-reporting framework by rebinding
+the "report" function: (report event)
+
+The 'event' argument is a map.  It will always have a :type key,
+whose value will be a keyword signaling the type of event being
+reported.  Standard events with :type value of :pass, :fail, and
+:error are called when an assertion passes, fails, and throws an
+exception, respectively.  In that case, the event will also have
+the following keys:
+
+  :expected   The form that was expected to be true
+  :actual     A form representing what actually occurred
+  :message    The string message given as an argument to 'is'
+
+The "testing" strings will be a list in "*testing-contexts*", and
+the vars being tested will be a list in "*testing-vars*".
+
+Your "report" function should wrap any printing calls in the
+"with-test-out" macro, which rebinds *out* to the current value
+of *test-out*.
+
+For additional event types, see the examples in the code.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.walk-api.html">clojure.walk</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.xml-api.html">clojure.xml</a></h4>
+    <span class="author-line">by <span class="author-name">Rich Hickey</span><br /></span>
+    <pre class="namespace-docstr">XML reading/writing.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.zip-api.html">clojure.zip</a></h4>
+    <span class="author-line">by <span class="author-name">Rich Hickey</span><br /></span>
+    <pre class="namespace-docstr">Functional hierarchical zipper, with navigation, editing,
+and enumeration.  See Huet</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.core.protocols-api.html">clojure.core.protocols</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.test.junit-api.html">clojure.test.junit</a></h4>
+    <span class="author-line">by <span class="author-name">Jason Sankey</span><br /></span>
+    <pre class="namespace-docstr">clojure.test extension for JUnit-compatible XML output.
+
+JUnit (http://junit.org/) is the most popular unit-testing library
+for Java.  As such, tool support for JUnit output formats is
+common.  By producing compatible output from tests, this tool
+support can be exploited.
+
+To use, wrap any calls to clojure.test/run-tests in the
+with-junit-output macro, like this:
+
+  (use 'clojure.test)
+  (use 'clojure.test.junit)
+
+  (with-junit-output
+    (run-tests 'my.cool.library))
+
+To write the output to a file, rebind clojure.test/*test-out* to
+your own PrintWriter (perhaps opened using
+clojure.java.io/writer).</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/clojure/clojure.test.tap-api.html">clojure.test.tap</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Sierra</span><br /></span>
+    <pre class="namespace-docstr">clojure.test extensions for the Test Anything Protocol (TAP)
+
+TAP is a simple text-based syntax for reporting test results.  TAP
+was originally develped for Perl, and now has implementations in
+several languages.  For more information on TAP, see
+http://testanything.org/ and
+http://search.cpan.org/~petdance/TAP-1.0.0/TAP.pm
+
+To use this library, wrap any calls to
+clojure.test/run-tests in the with-tap-output macro,
+like this:
+
+  (use 'clojure.test)
+  (use 'clojure.test.tap)
+
+  (with-tap-output
+   (run-tests 'my.cool.library))</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">core.unify</h2>
+  <br />
+  <a href="http://clojure.github.com/core.unify/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/core.unify/index.html">clojure.core.unify</a></h4>
+    <span class="author-line">by <span class="author-name">Michael Fogus</span><br /></span>
+    <pre class="namespace-docstr">A unification library for Clojure.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">data.codec</h2>
+  <br />
+  <a href="http://clojure.github.com/data.codec/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/data.codec/index.html">clojure.data.codec.base64</a></h4>
+    <span class="author-line">by <span class="author-name">Alex Taggart</span><br /></span>
+    <pre class="namespace-docstr">Functions for working with base64 encodings.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">data.csv</h2>
+  <br />
+  <a href="http://clojure.github.com/data.csv/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/data.csv/index.html">clojure.data.csv</a></h4>
+    <span class="author-line">by <span class="author-name">Jonas Enlund</span><br /></span>
+    <pre class="namespace-docstr">Reading and writing comma separated values.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">data.json</h2>
+  <br />
+  <a href="http://clojure.github.com/data.json/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/data.json/index.html">clojure.data.json</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Sierra</span><br /></span>
+    <pre class="namespace-docstr">JavaScript Object Notation (JSON) parser/writer.
+See http://www.json.org/
+To write JSON, use json-str, write-json, or write-json.
+To read JSON, use read-json.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">data.priority-map</h2>
+  <br />
+  <a href="http://clojure.github.com/data.priority-map/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/data.priority-map/index.html">clojure.data.priority-map</a></h4>
+    <span class="author-line">by <span class="author-name">Mark Engelberg</span><br /></span>
+    <pre class="namespace-docstr">A priority map is very similar to a sorted map, but whereas a sorted map produces a
+sequence of the entries sorted by key, a priority map produces the entries sorted by value.
+In addition to supporting all the functions a sorted map supports, a priority map
+can also be thought of as a queue of [item priority] pairs.  To support usage as
+a versatile priority queue, priority maps also support conj/peek/pop operations.
+
+The standard way to construct a priority map is with priority-map:
+user=&gt; (def p (priority-map :a 2 :b 1 :c 3 :d 5 :e 4 :f 3))
+#'user/p
+user=&gt; p
+{:b 1, :a 2, :c 3, :f 3, :e 4, :d 5}
+
+So :b has priority 1, :a has priority 2, and so on.
+Notice how the priority map prints in an order sorted by its priorities (i.e., the map's values)
+
+We can use assoc to assign a priority to a new item:
+user=&gt; (assoc p :g 1)
+{:b 1, :g 1, :a 2, :c 3, :f 3, :e 4, :d 5}
+
+or to assign a new priority to an extant item:
+user=&gt; (assoc p :c 4)
+{:b 1, :a 2, :f 3, :c 4, :e 4, :d 5}
+
+We can remove an item from the priority map:
+user=&gt; (dissoc p :e)
+{:b 1, :a 2, :c 3, :f 3, :d 5}
+
+An alternative way to add to the priority map is to conj a [item priority] pair:
+user=&gt; (conj p [:g 0])
+{:g 0, :b 1, :a 2, :c 3, :f 3, :e 4, :d 5}
+
+or use into:
+user=&gt; (into p [[:g 0] [:h 1] [:i 2]])
+{:g 0, :b 1, :h 1, :a 2, :i 2, :c 3, :f 3, :e 4, :d 5}
+
+Priority maps are countable:
+user=&gt; (count p)
+6
+
+Like other maps, equivalence is based not on type, but on contents.
+In other words, just as a sorted-map can be equal to a hash-map,
+so can a priority-map.
+user=&gt; (= p {:b 1, :a 2, :c 3, :f 3, :e 4, :d 5})
+true
+
+You can test them for emptiness:
+user=&gt; (empty? (priority-map))
+true
+user=&gt; (empty? p)
+false
+
+You can test whether an item is in the priority map:
+user=&gt; (contains? p :a)
+true
+user=&gt; (contains? p :g)
+false
+
+It is easy to look up the priority of a given item, using any of the standard map mechanisms:
+user=&gt; (get p :a)
+2
+user=&gt; (get p :g 10)
+10
+user=&gt; (p :a)
+2
+user=&gt; (:a p)
+2
+
+Priority maps derive much of their utility by providing priority-based seq.
+Note that no guarantees are made about the order in which items of the same priority appear.
+user=&gt; (seq p)
+([:b 1] [:a 2] [:c 3] [:f 3] [:e 4] [:d 5])
+Because no guarantees are made about the order of same-priority items, note that
+rseq might not be an exact reverse of the seq.  It is only guaranteed to be in
+descending order.
+user=&gt; (rseq p)
+([:d 5] [:e 4] [:c 3] [:f 3] [:a 2] [:b 1])
+
+This means first/rest/next/for/map/etc. all operate in priority order.
+user=&gt; (first p)
+[:b 1]
+user=&gt; (rest p)
+([:a 2] [:c 3] [:f 3] [:e 4] [:d 5])
+
+Priority maps support metadata:
+user=&gt; (meta (with-meta p {:extra :info}))
+{:extra :info}
+
+But perhaps most importantly, priority maps can also function as priority queues.
+peek, like first, gives you the first [item priority] pair in the collection.
+pop removes the first [item priority] from the collection.
+(Note that unlike rest, which returns a seq, pop returns a priority map).
+
+user=&gt; (peek p)
+[:b 1]
+user=&gt; (pop p)
+{:a 2, :c 3, :f 3, :e 4, :d 5}
+
+It is also possible to use a custom comparator:
+user=&gt; (priority-map-by (comparator &gt;) :a 1 :b 2 :c 3)
+{:c 3, :b 2, :a 1}
+
+All of these operations are efficient.  Generally speaking, most operations
+are O(log n) where n is the number of distinct priorities.  Some operations
+(for example, straightforward lookup of an item's priority, or testing
+whether a given item is in the priority map) are as efficient
+as Clojure's built-in map.
+
+The key to this efficiency is that internally, not only does the priority map store
+an ordinary hash map of items to priority, but it also stores a sorted map that
+maps priorities to sets of items with that priority.
+
+A typical textbook priority queue data structure supports at the ability to add
+a [item priority] pair to the queue, and to pop/peek the next [item priority] pair.
+But many real-world applications of priority queues require more features, such
+as the ability to test whether something is already in the queue, or to reassign
+a priority.  For example, a standard formulation of Dijkstra's algorithm requires the
+ability to reduce the priority number associated with a given item.  Once you
+throw persistence into the mix with the desire to adjust priorities, the traditional
+structures just don't work that well.
+
+This particular blend of Clojure's built-in hash sets, hash maps, and sorted maps
+proved to be a great way to implement an especially flexible persistent priority queue.
+
+Connoisseurs of algorithms will note that this structure's peek operation is not O(1) as
+it would be if based upon a heap data structure, but I feel this is a small concession for
+the blend of persistence, priority reassignment, and priority-sorted seq, which can be
+quite expensive to achieve with a heap (I did actually try this for comparison).  Furthermore,
+this peek's logarithmic behavior is quite good (on my computer I can do a million
+peeks at a priority map with a million items in 750ms).  Also, consider that peek and pop
+usually follow one another, and even with a heap, pop is logarithmic.  So the net combination
+of peek and pop is not much different between this versatile formulation of a priority map and
+a more limited heap-based one.  In a nutshell, peek, although not O(1), is unlikely to be the
+bottleneck in your program.
+
+All in all, I hope you will find priority maps to be an easy-to-use and useful addition
+to Clojure's assortment of built-in maps (hash-map and sorted-map).</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">data.zip</h2>
+  <br />
+  <a href="http://clojure.github.com/data.zip/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/data.zip/index.html">clojure.data.zip</a></h4>
+    <span class="author-line">by <span class="author-name">Chris Houser</span><br /></span>
+    <pre class="namespace-docstr">System for filtering trees and nodes generated by zip.clj in
+general, and xml trees in particular.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/data.zip/index.html">clojure.data.zip.xml</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">java.classpath</h2>
+  <br />
+  <a href="http://clojure.github.com/java.classpath/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/java.classpath/index.html">clojure.java.classpath</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Sierra</span><br /></span>
+    <pre class="namespace-docstr">Utilities for dealing with the JVM's classpath</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">java.data</h2>
+  <br />
+  <a href="http://clojure.github.com/java.data/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/java.data/index.html">clojure.java.data</a></h4>
+    <span class="author-line">by <span class="author-name">Cosmin Stejerean</span><br /></span>
+    <pre class="namespace-docstr">Support for recursively converting Java beans to Clojure and vice versa.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">java.jdbc</h2>
+  <br />
+  <a href="http://clojure.github.com/java.jdbc/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/java.jdbc/index.html">clojure.java.jdbc</a></h4>
+    <span class="author-line">by <span class="author-name">Stephen C. Gilardi, Sean Corfield</span><br /></span>
+    <pre class="namespace-docstr">A Clojure interface to SQL databases via JDBC
+
+clojure.java.jdbc provides a simple abstraction for CRUD (create, read,
+update, delete) operations on a SQL database, along with basic transaction
+support. Basic DDL operations are also supported (create table, drop table,
+access to table metadata).
+
+Maps are used to represent records, making it easy to store and retrieve
+data. Results can be processed using any standard sequence operations.
+
+For most operations, Java's PreparedStatement is used so your SQL and
+parameters can be represented as simple vectors where the first element
+is the SQL string, with ? for each parameter, and the remaining elements
+are the parameter values to be substituted. In general, operations return
+the number of rows affected, except for a single record insert where any
+generated keys are returned (as a map).</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/java.jdbc/index.html">clojure.java.jdbc.internal</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">java.jmx</h2>
+  <br />
+  <a href="http://clojure.github.com/java.jmx/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/java.jmx/index.html">clojure.java.jmx</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Halloway</span><br /></span>
+    <pre class="namespace-docstr">JMX support for Clojure
+
+Usage
+  (require '[clojure.java.jmx :as jmx])
+
+What beans do I have?
+
+  (jmx/mbean-names "*:*")
+  -&gt; #&lt;HashSet [java.lang:type=MemoryPool,name=CMS Old Gen, 
+                java.lang:type=Memory, ...]
+
+What attributes does a bean have?
+
+  (jmx/attribute-names "java.lang:type=Memory")
+  -&gt; (:Verbose :ObjectPendingFinalizationCount 
+      :HeapMemoryUsage :NonHeapMemoryUsage)
+
+What is the value of an attribute? 
+
+  (jmx/read "java.lang:type=Memory" :ObjectPendingFinalizationCount)
+  -&gt; 0
+
+Can't I just have *all* the attributes in a Clojure map?
+
+  (jmx/mbean "java.lang:type=Memory")
+  -&gt; {:NonHeapMemoryUsage
+       {:used 16674024, :max 138412032, :init 24317952, :committed 24317952},
+      :HeapMemoryUsage
+       {:used 18619064, :max 85393408, :init 0, :committed 83230720},
+      :ObjectPendingFinalizationCount 0,
+      :Verbose false}
+
+Can I find and invoke an operation?
+
+  (jmx/operation-names "java.lang:type=Memory")
+  -&gt; (:gc)  
+  (jmx/invoke "java.lang:type=Memory" :gc)
+  -&gt; nil
+
+What about some other process? Just run *any* of the above code
+inside a with-connection:
+
+  (jmx/with-connection {:host "localhost", :port 3000} 
+    (jmx/mbean "java.lang:type=Memory"))
+  -&gt; {:ObjectPendingFinalizationCount 0, 
+      :HeapMemoryUsage ... etc.}
+
+Can I serve my own beans?  Sure, just drop a Clojure ref
+into an instance of clojure.java.jmx.Bean, and the bean
+will expose read-only attributes for every key/value pair
+in the ref:
+
+  (jmx/register-mbean
+     (create-bean
+     (ref {:string-attribute "a-string"}))
+     "my.namespace:name=Value")</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">math.combinatorics</h2>
+  <br />
+  <a href="http://clojure.github.com/math.combinatorics/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/math.combinatorics/index.html">clojure.math.combinatorics</a></h4>
+    <span class="author-line">by <span class="author-name">Mark Engelberg</span><br /></span>
+    <pre class="namespace-docstr">Efficient, functional algorithms for generating lazy
+sequences for common combinatorial functions. (See the source code 
+for a longer description.)</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">math.numeric-tower</h2>
+  <br />
+  <a href="http://clojure.github.com/math.numeric-tower/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/math.numeric-tower/index.html">clojure.math.numeric-tower</a></h4>
+    <span class="author-line">by <span class="author-name">Mark Engelberg</span><br /></span>
+    <pre class="namespace-docstr">Math functions that deal intelligently with the various
+types in Clojure's numeric tower, as well as math functions
+commonly found in Scheme implementations.
+
+expt - (expt x y) is x to the yth power, returns an exact number
+  if the base is an exact number, and the power is an integer,
+  otherwise returns a double.
+abs - (abs n) is the absolute value of n
+gcd - (gcd m n) returns the greatest common divisor of m and n
+lcm - (lcm m n) returns the least common multiple of m and n
+
+When floor, ceil, and round are passed doubles, we just defer to
+the corresponding functions in Java's Math library.  Java's
+behavior is somewhat strange (floor and ceil return doubles rather
+than integers, and round on large doubles yields spurious results)
+but it seems best to match Java's semantics.  On exact numbers
+(ratios and decimals), we can have cleaner semantics.
+
+floor - (floor n) returns the greatest integer less than or equal to n.
+  If n is an exact number, floor returns an integer,
+  otherwise a double.
+ceil - (ceil n) returns the least integer greater than or equal to n.
+  If n is an exact number, ceil returns an integer,
+  otherwise a double.
+round - (round n) rounds to the nearest integer.
+  round always returns an integer.  round rounds up for values
+  exactly in between two integers.
+
+
+sqrt - Implements the sqrt behavior I'm accustomed to from PLT Scheme,
+  specifically, if the input is an exact number, and is a square
+  of an exact number, the output will be exact.  The downside
+  is that for the common case (inexact square root), some extra
+  computation is done to look for an exact square root first.
+  So if you need blazingly fast square root performance, and you
+  know you're just going to need a double result, you're better
+  off calling java's Math/sqrt, or alternatively, you could just
+  convert your input to a double before calling this sqrt function.
+  If Clojure ever gets complex numbers, then this function will
+  need to be updated (so negative inputs yield complex outputs).
+exact-integer-sqrt - Implements a math function from the R6RS Scheme
+  standard.  (exact-integer-sqrt k) where k is a non-negative integer,
+  returns [s r] where k = s^2+r and k &lt; (s+1)^2.  In other words, it
+  returns the floor of the square root and the "remainder".</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">tools.cli</h2>
+  <br />
+  <a href="http://clojure.github.com/tools.cli/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.cli/index.html">clojure.tools.cli</a></h4>
+    <span class="author-line">by <span class="author-name">Gareth Jones</span><br /></span>
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">tools.logging</h2>
+  <br />
+  <a href="http://clojure.github.com/tools.logging/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.logging/index.html">clojure.tools.logging</a></h4>
+    <span class="author-line">by <span class="author-name">Alex Taggart</span><br /></span>
+    <pre class="namespace-docstr">Logging macros which delegate to a specific logging implementation. At
+runtime a specific implementation is selected from, in order, slf4j,
+Apache commons-logging, slf4j, log4j, and finally java.util.logging.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.logging/index.html">clojure.tools.logging.impl</a></h4>
+    <span class="author-line">by <span class="author-name">Alex Taggart</span><br /></span>
+    <pre class="namespace-docstr">Protocols used to allow access to logging implementations.
+This namespace only need be used by those providing logging
+implementations to be consumed by the core api.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">tools.macro</h2>
+  <br />
+  <a href="http://clojure.github.com/tools.macro/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.macro/index.html">clojure.tools.macro</a></h4>
+    <span class="author-line">by <span class="author-name">Konrad Hinsen</span><br /></span>
+    <pre class="namespace-docstr">Local macros and symbol macros
+
+Local macros are defined by a macrolet form. They are usable only
+inside its body. Symbol macros can be defined globally
+(defsymbolmacro) or locally (symbol-macrolet). A symbol
+macro defines a form that replaces a symbol during macro
+expansion. Function arguments and symbols bound in let
+forms are not subject to symbol macro expansion.
+
+Local macros are most useful in the definition of the expansion
+of another macro, they may be used anywhere. Global symbol
+macros can be used only inside a with-symbol-macros form.</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">tools.namespace</h2>
+  <br />
+  <a href="http://clojure.github.com/tools.namespace/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.namespace/index.html">clojure.tools.namespace</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Sierra</span><br /></span>
+    <pre class="namespace-docstr">Search for ns declarations in dirs, JARs, or CLASSPATH</pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">tools.nrepl</h2>
+  <br />
+  <a href="http://clojure.github.com/tools.nrepl/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.nrepl/index.html">clojure.tools.nrepl</a></h4>
+    <span class="author-line">by <span class="author-name">Chas Emerick</span><br /></span>
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.nrepl/index.html">clojure.tools.nrepl.cmdline</a></h4>
+    <span class="author-line">by <span class="author-name">Chas Emerick</span><br /></span>
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.nrepl/index.html">clojure.tools.nrepl.helpers</a></h4>
+    <span class="author-line">by <span class="author-name">Chas Emerick</span><br /></span>
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div>
+</div><div class="project-entry">
+  <br />
+  <hr />
+  <h2 class="project-tag">tools.trace</h2>
+  <br />
+  <a href="http://clojure.github.com/tools.trace/" class="api-link">Project API Overview</a><br />
+  <div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.com/tools.trace/index.html">clojure.tools.trace</a></h4>
+    <span class="author-line">by <span class="author-name">Stuart Sierra, Michel Salim, Luc Préfontaine, Jonathan Fischer Friberg</span><br /></span>
+    <pre class="namespace-docstr">This file defines simple tracing macros to help you see what your code is doing.</pre>
+    
+    
+  </div>
+</div>
+</body></html></div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div style="text-align: center;" id="copyright">
+            Copyright 2008-2011 Rich Hickey and the various contributors
+          </div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a title="Visit Tom Hickey's website." href="http://www.tomhickey.com">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>
