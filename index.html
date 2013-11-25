@@ -1230,33 +1230,35 @@ For more documentation, see:
 http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html
 
 As of release 0.3.0, the API has undergone a major overhaul and most of the
-original API has been deprecated in favor of a more idiomatic API, and a
-minimal DSL for generating SQL has been added as an option. The original
-API is still supported but will be deprecated before a 1.0.0 release is
-made at some future date.</pre>
+original API has been deprecated in favor of a more idiomatic API. The
+original API has been moved to java.jdbc.deprecated for backward
+compatibility but it will be removed before a 1.0.0 release.</pre>
     
     
   </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.com/java.jdbc/index.html">clojure.java.jdbc.ddl</a></h4>
-    <span class="author-line">by <span class="author-name">Sean Corfield</span><br /></span>
-    <pre class="namespace-docstr">An optional DSL for generating DDL.
+    <h4 class="namespace-name"><a href="http://clojure.github.com/java.jdbc/index.html">clojure.java.jdbc.deprecated</a></h4>
+    <span class="author-line">by <span class="author-name">Stephen C. Gilardi, Sean Corfield</span><br /></span>
+    <pre class="namespace-docstr">A Clojure interface to SQL databases via JDBC
 
-Intended to be used with clojure.java.jdbc, this provides a simple DSL -
-Domain Specific Language - that generates raw DDL strings. Any other DSL
-can be used instead. This DSL is entirely optional and is deliberately
-not very sophisticated.</pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.com/java.jdbc/index.html">clojure.java.jdbc.sql</a></h4>
-    <span class="author-line">by <span class="author-name">Sean Corfield</span><br /></span>
-    <pre class="namespace-docstr">An optional DSL for generating SQL.
+This namespace contains the old API (0.2.3) which was deprecated in the 0.3.0
+release and is provided for backward compatibility. This API will be removed
+completely before a 1.0.0 release so will need to migrate code to the new API
+before that release.
 
-Intended to be used with clojure.java.jdbc, this provides a simple DSL -
-Domain Specific Language - that generates raw SQL strings. Any other DSL
-can be used instead. This DSL is entirely optional and is deliberately
-not very sophisticated. It is sufficient to support the delete!, insert!
-and update! high-level operations within clojure.java.jdbc directly.</pre>
+clojure.java.jdbc provides a simple abstraction for CRUD (create, read,
+update, delete) operations on a SQL database, along with basic transaction
+support. Basic DDL operations are also supported (create table, drop table,
+access to table metadata).
+
+Maps are used to represent records, making it easy to store and retrieve
+data. Results can be processed using any standard sequence operations.
+
+For most operations, Java's PreparedStatement is used so your SQL and
+parameters can be represented as simple vectors where the first element
+is the SQL string, with ? for each parameter, and the remaining elements
+are the parameter values to be substituted. In general, operations return
+the number of rows affected, except for a single record insert where any
+generated keys are returned (as a map).</pre>
     
     
   </div>
