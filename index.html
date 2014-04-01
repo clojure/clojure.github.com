@@ -906,11 +906,16 @@ buffer
     <h4 class="namespace-name"><a href="http://clojure.github.io/data.avl/index.html">clojure.data.avl</a></h4>
     <span class="author-line">by <span class="author-name">Michał Marczyk</span><br /></span>
     <pre class="namespace-docstr">An implementation of persistent sorted maps and sets based on AVL
-trees with API mimicking that of Clojure's sorted maps and
-sets (based on Red-Black Trees). Additionally, the provided map and
-set types support the transients API and logarithmic time rank
-queries via clojure.core/nth (select element by rank) and
-clojure.data.avl/rank-of (discover rank of element).</pre>
+trees which can be used as drop-in replacements for Clojure's
+built-in sorted maps and sets based on red-black trees. Apart from
+the standard sorted collection API, the provided map and set types
+support the transients API and several additional logarithmic time
+operations: rank queries via clojure.core/nth (select element by
+rank) and clojure.data.avl/rank-of (discover rank of element),
+"nearest key" lookups via clojure.data.avl/nearest, splits by key
+and index via clojure.data.avl/split-key and
+clojure.data.avl/split-at, respectively, and subsets/submaps using
+clojure.data.avl/subrange.</pre>
     
     
   </div>
@@ -1541,6 +1546,12 @@ See clojure.tools.analyzer.core-test for an example on how to setup the analyzer
     
     
   </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer/index.html">clojure.tools.analyzer.passes.trim</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer/index.html">clojure.tools.analyzer.passes.uniquify</a></h4>
     
     <pre class="namespace-docstr"></pre>
@@ -1569,6 +1580,12 @@ See clojure.tools.analyzer.core-test for an example on how to setup the analyzer
     <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/index.html">clojure.tools.analyzer.jvm</a></h4>
     
     <pre class="namespace-docstr">Analyzer for clojure code, extends tools.analyzer with JVM specific passes/forms</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/index.html">clojure.tools.analyzer.jvm.utils</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
     
     
   </div>
