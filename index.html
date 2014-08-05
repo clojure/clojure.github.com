@@ -855,7 +855,9 @@ to keywords naming primitive types.</pre>
   <div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed</a></h4>
     
-    <pre class="namespace-docstr"></pre>
+    <pre class="namespace-docstr">This namespace contains typed wrapper macros, type aliases
+and functions for type checking Clojure code. check-ns is the interface
+for checking namespaces, cf for checking individual forms.</pre>
     
     
   </div><div class="namespace-entry">
@@ -866,60 +868,36 @@ checking core.async code. Ensure clojure.core.async is require'd
 before performing type checking.
 
 go
-  use go&gt;
+  use go
 
 chan
-  use chan&gt;
+  use chan
 
 buffer
-  use buffer&gt; (similar for other buffer constructors)
+  use buffer (similar for other buffer constructors)
 </pre>
     
     
   </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.fn</a></h4>
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.base-env-common</a></h4>
+    
+    <pre class="namespace-docstr">Utilities for all implementations of the type checker</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check-form-cljs</a></h4>
     
     <pre class="namespace-docstr"></pre>
     
     
   </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.fn-method-utils</a></h4>
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check-ns-clj</a></h4>
     
     <pre class="namespace-docstr"></pre>
     
     
   </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.funapp</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.isa</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.map</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.recur-utils</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.utils</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.coerce-utils</a></h4>
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.collect-utils</a></h4>
     
     <pre class="namespace-docstr"></pre>
     
@@ -931,25 +909,13 @@ buffer
     
     
   </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.load-if-needed</a></h4>
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.macros</a></h4>
     
     <pre class="namespace-docstr"></pre>
     
     
   </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.ns-deps-utils</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.open-result</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.reset-caches</a></h4>
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.statistics</a></h4>
     
     <pre class="namespace-docstr"></pre>
     
@@ -1663,13 +1629,115 @@ See clojure.tools.analyzer.core-test for an example on how to setup the analyzer
   <br />
   <a href="http://clojure.github.io/tools.analyzer.jvm/" class="api-link">Project API Overview</a><br />
   <div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/index.html">clojure.tools.analyzer.jvm</a></h4>
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.jvm-api.html">clojure.tools.analyzer.jvm</a></h4>
     
     <pre class="namespace-docstr">Analyzer for clojure code, extends tools.analyzer with JVM specific passes/forms</pre>
     
     
   </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/index.html">clojure.tools.analyzer.jvm.utils</a></h4>
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.analyze-host-expr-api.html">clojure.tools.analyzer.passes.jvm.analyze-host-expr</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.annotate-branch-api.html">clojure.tools.analyzer.passes.jvm.annotate-branch</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.annotate-class-id-api.html">clojure.tools.analyzer.passes.jvm.annotate-class-id</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.annotate-internal-name-api.html">clojure.tools.analyzer.passes.jvm.annotate-internal-name</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.annotate-loops-api.html">clojure.tools.analyzer.passes.jvm.annotate-loops</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.annotate-methods-api.html">clojure.tools.analyzer.passes.jvm.annotate-methods</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.annotate-tag-api.html">clojure.tools.analyzer.passes.jvm.annotate-tag</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.box-api.html">clojure.tools.analyzer.passes.jvm.box</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.classify-invoke-api.html">clojure.tools.analyzer.passes.jvm.classify-invoke</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.clear-locals-api.html">clojure.tools.analyzer.passes.jvm.clear-locals</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.constant-lifter-api.html">clojure.tools.analyzer.passes.jvm.constant-lifter</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.emit-form-api.html">clojure.tools.analyzer.passes.jvm.emit-form</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.fix-case-test-api.html">clojure.tools.analyzer.passes.jvm.fix-case-test</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.infer-tag-api.html">clojure.tools.analyzer.passes.jvm.infer-tag</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.validate-api.html">clojure.tools.analyzer.passes.jvm.validate</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.validate-loop-locals-api.html">clojure.tools.analyzer.passes.jvm.validate-loop-locals</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.passes.jvm.warn-on-reflection-api.html">clojure.tools.analyzer.passes.jvm.warn-on-reflection</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer.jvm/clojure.tools.analyzer.jvm.utils-api.html">clojure.tools.analyzer.jvm.utils</a></h4>
     
     <pre class="namespace-docstr"></pre>
     
