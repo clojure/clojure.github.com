@@ -156,7 +156,7 @@ functions.</pre>
   <a href="http://clojure.github.io/clojure/" class="api-link">Project API Overview</a><br />
   <div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/clojure/clojure.core-api.html">clojure.core</a></h4>
-    
+    <span class="author-line">by <span class="author-name">Rich Hickey</span><br /></span>
     <pre class="namespace-docstr">Fundamental library of the Clojure language</pre>
     
     
@@ -192,8 +192,8 @@ functions.</pre>
     
   </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/clojure/clojure.java.io-api.html">clojure.java.io</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
+    <span class="author-line">by <span class="author-name">Stuart Sierra, Chas Emerick, Stuart Halloway</span><br /></span>
+    <pre class="namespace-docstr">This file defines polymorphic I/O utility functions for Clojure.</pre>
     
     
   </div><div class="namespace-entry">
@@ -204,14 +204,15 @@ functions.</pre>
     
   </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/clojure/clojure.java.shell-api.html">clojure.java.shell</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
+    <span class="author-line">by <span class="author-name">Chris Houser, Stuart Halloway</span><br /></span>
+    <pre class="namespace-docstr">Conveniently launch a sub-process providing its stdin and
+collecting its stdout</pre>
     
     
   </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/clojure/clojure.main-api.html">clojure.main</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
+    <span class="author-line">by <span class="author-name">Stephen C. Gilardi and Rich Hickey</span><br /></span>
+    <pre class="namespace-docstr">Top-level main function for Clojure REPL and scripts.</pre>
     
     
   </div><div class="namespace-entry">
@@ -282,8 +283,8 @@ Platform implementers must:
     
   </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/clojure/clojure.set-api.html">clojure.set</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
+    <span class="author-line">by <span class="author-name">Rich Hickey</span><br /></span>
+    <pre class="namespace-docstr">Set operations such as union/intersection.</pre>
     
     
   </div><div class="namespace-entry">
@@ -294,8 +295,38 @@ Platform implementers must:
     
   </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/clojure/clojure.string-api.html">clojure.string</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
+    <span class="author-line">by <span class="author-name">Stuart Sierra, Stuart Halloway, David Liebke</span><br /></span>
+    <pre class="namespace-docstr">Clojure String utilities
+
+It is poor form to (:use clojure.string). Instead, use require
+with :as to specify a prefix, e.g.
+
+(ns your.namespace.here
+  (:require [clojure.string :as str]))
+
+Design notes for clojure.string:
+
+1. Strings are objects (as opposed to sequences). As such, the
+   string being manipulated is the first argument to a function;
+   passing nil will result in a NullPointerException unless
+   documented otherwise. If you want sequence-y behavior instead,
+   use a sequence.
+
+2. Functions are generally not lazy, and call straight to host
+   methods where those are available and efficient.
+
+3. Functions take advantage of String implementation details to
+   write high-performing loop/recurs instead of using higher-order
+   functions. (This is not idiomatic in general-purpose application
+   code.)
+
+4. When a function is documented to accept a string argument, it
+   will take any implementation of the correct *interface* on the
+   host platform. In Java, this is CharSequence, which is more
+   general than String. In ordinary usage you will almost always
+   pass concrete strings. If you are doing something unusual,
+   e.g. passing a mutable implementation of CharSequence, then
+   thread-safety is your responsibility.</pre>
     
     
   </div><div class="namespace-entry">
@@ -525,8 +556,17 @@ For additional event types, see the examples in the code.</pre>
     
   </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/clojure/clojure.walk-api.html">clojure.walk</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
+    <span class="author-line">by <span class="author-name">Stuart Sierra</span><br /></span>
+    <pre class="namespace-docstr">This file defines a generic tree walker for Clojure data
+structures.  It takes any data structure (list, vector, map, set,
+seq), calls a function on every element, and uses the return value
+of the function in place of the original.  This makes it fairly
+easy to write recursive search-and-replace functions, as shown in
+the examples.
+
+Note: "walk" supports all Clojure data structures EXCEPT maps
+created with sorted-map-by.  There is no (obvious) way to retrieve
+the sorting function.</pre>
     
     
   </div><div class="namespace-entry">
@@ -555,6 +595,12 @@ and enumeration.  See Huet</pre>
 to change.  Note that fold and its derivatives require Java 7+ or
 Java 6 + jsr166y.jar for fork/join support. See Clojure's pom.xml for the
 dependency info.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/clojure/clojure.core.server-api.html">clojure.core.server</a></h4>
+    <span class="author-line">by <span class="author-name">Alex Miller</span><br /></span>
+    <pre class="namespace-docstr">Socket server support</pre>
     
     
   </div><div class="namespace-entry">
@@ -858,12 +904,6 @@ to keywords naming primitive types.</pre>
     <pre class="namespace-docstr">This namespace contains typed wrapper macros, type aliases
 and functions for type checking Clojure code. check-ns is the interface
 for checking namespaces, cf for checking individual forms.</pre>
-    
-    
-  </div><div class="namespace-entry">
-    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.ast-utils</a></h4>
-    
-    <pre class="namespace-docstr"></pre>
     
     
   </div><div class="namespace-entry">
@@ -1558,7 +1598,7 @@ See clojure.tools.analyzer.core-test for an example on how to setup the analyzer
   </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer/index.html">clojure.tools.analyzer.ast</a></h4>
     
-    <pre class="namespace-docstr">Utilities for AST walking/updating</pre>
+    <pre class="namespace-docstr"></pre>
     
     
   </div><div class="namespace-entry">
@@ -1576,7 +1616,7 @@ See clojure.tools.analyzer.core-test for an example on how to setup the analyzer
   </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/tools.analyzer/index.html">clojure.tools.analyzer.passes</a></h4>
     
-    <pre class="namespace-docstr"></pre>
+    <pre class="namespace-docstr">Utilities for pass scheduling</pre>
     
     
   </div><div class="namespace-entry">
