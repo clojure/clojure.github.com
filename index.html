@@ -943,6 +943,12 @@ buffer
     
     
   </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.def</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.fn-methods</a></h4>
     
     <pre class="namespace-docstr"></pre>
@@ -955,7 +961,33 @@ buffer
     
     
   </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.special.ann-form</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.check.value</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.collect-utils</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.contract</a></h4>
+    
+    <pre class="namespace-docstr">A contract system a la racket/contract.
+
+Main entry point is the `contract` macro.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.current-impl</a></h4>
     
     <pre class="namespace-docstr"></pre>
     
@@ -967,9 +999,46 @@ buffer
     
     
   </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.lang</a></h4>
+    
+    <pre class="namespace-docstr">Extensible languages in Clojure, a la Racket's #lang.
+
+This is a simple library that monkey patches clojure.core/load
+to be extensible to different backends.
+
+`monkey-patch-extensible-load` does the actual monkey-patching and
+must be called explicitly.
+
+`lang-dispatch` is a map from keywords to alternative `load` functions
+(of type [String -&gt; nil]). The corresponding function will be used to
+load a file according its :lang metadata entry in the `ns` form.
+
+To add a new implementation, use
+  (alter-var-root lang-dispatch assoc :new-impl my-load)
+
+eg. A file with a `ns` form
+      (ns fancy-ns-form
+        {:lang :new-impl})
+    will use `my-load` to load the file.
+</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.load</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.macros</a></h4>
     
     <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/core.typed/index.html">clojure.core.typed.runtime-check</a></h4>
+    
+    <pre class="namespace-docstr">Adds runtime checks where annotations are instead of type checking</pre>
     
     
   </div><div class="namespace-entry">
@@ -1294,6 +1363,66 @@ to Clojure's assortment of built-in maps (hash-map and sorted-map).</pre>
     <span class="author-line">by <span class="author-name">Chris Houser</span><br /></span>
     <pre class="namespace-docstr">Functions to parse XML into lazy sequences and lazy trees and
 emit these as text.</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.event</a></h4>
+    <span class="author-line">by <span class="author-name">Herwig Hochleitner</span><br /></span>
+    <pre class="namespace-docstr">Data type for xml pull events</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.impl</a></h4>
+    <span class="author-line">by <span class="author-name">Herwig Hochleitner</span><br /></span>
+    <pre class="namespace-docstr">Shared private code for data.xml namespaces</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.jvm.emit</a></h4>
+    <span class="author-line">by <span class="author-name">Herwig Hochleitner</span><br /></span>
+    <pre class="namespace-docstr">JVM implementation of the emitter details</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.jvm.parse</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.name</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.node</a></h4>
+    <span class="author-line">by <span class="author-name">Herwig Hochleitner</span><br /></span>
+    <pre class="namespace-docstr">Data types for xml nodes: Element, CData and Comment</pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.process</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.protocols</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.prxml</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
+    
+    
+  </div><div class="namespace-entry">
+    <h4 class="namespace-name"><a href="http://clojure.github.io/data.xml/index.html">clojure.data.xml.tree</a></h4>
+    
+    <pre class="namespace-docstr"></pre>
     
     
   </div>
