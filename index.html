@@ -677,7 +677,11 @@ like this:
   <div class="namespace-entry">
     <h4 class="namespace-name"><a href="http://clojure.github.io/core.async/index.html">clojure.core.async</a></h4>
     
-    <pre class="namespace-docstr"></pre>
+    <pre class="namespace-docstr">Facilities for async programming and communication.
+
+go blocks are dispatched over an internal thread pool, which
+defaults to 8 threads. The size of this pool can be modified using
+the Java system property `clojure.core.async.pool-size`.</pre>
     
     
   </div><div class="namespace-entry">
